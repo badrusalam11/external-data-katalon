@@ -1,0 +1,42 @@
+name: Build and Release JAR
+
+on:
+  push:
+    tags:
+      - 'v*'  # e.g., v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ☕ Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: 🛠️ Grant permission to Gradle
+        run: chmod +x ./gradlew
+
+      - name: 🧱 Build with Gradle
+        run: ./gradlew clean build
+
+      - name: 📦 Zip JAR file
+        run: |
+          mkdir release
+          cp build/libs/*.jar release/external-data-sheet-${{ github.ref_name }}.jar
+          cd release && zip external-data-sheet-${{ github.ref_name }}.zip *.jar
+
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body_path: RELEASE_NOTE.md
+          files: release/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
