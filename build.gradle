@@ -1,0 +1,45 @@
+plugins {
+    id 'groovy'
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'com.katalon'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Groovy runtime
+    implementation 'org.codehaus.groovy:groovy-all:3.0.19'
+
+    // Apache POI (if you still need Excel support alongside Sheets)
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+    // Google Sheets API client (v4‑rev1‑1.20.0)
+    implementation 'com.google.apis:google-api-services-sheets:v4-rev1-1.20.0'
+
+    // Service‑account / OAuth2 support
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.16.0'
+
+    // Jackson JSON support for Google HTTP client
+    implementation 'com.google.http-client:google-http-client-jackson2:1.43.0'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+shadowJar {
+    archiveBaseName.set('external-data-sheet')
+    archiveVersion.set(version)
+    archiveClassifier.set('') // omit "-all" suffix
+}
+
+tasks.build {
+    dependsOn shadowJar
+}
