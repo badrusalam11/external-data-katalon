@@ -40,7 +40,7 @@ external-data-katalon/
 2. Run:
 
    ```bash
-   gradle clean build    # Linux/macOS
+   ./gradlew clean build    # Linux/macOS
 
 3. Output JAR file will be located at: build/libs/external-data-sheet.jar
 

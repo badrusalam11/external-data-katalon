@@ -25,12 +25,12 @@ jobs:
       - name: 🧱 Build with Gradle
         run: ./gradlew clean build
 
-      - name: 📦 Zip JAR file
+      - name: 📦 Zip shadow JAR
         run: |
-          mkdir release
-          cp build/libs/*.jar release/external-data-sheet-${{ github.ref_name }}.jar
-          cd release && zip external-data-sheet-${{ github.ref_name }}.zip *.jar
-
+            mkdir release
+            cp build/libs/external-data-sheet-*.jar release/external-data-sheet-${{ github.ref_name }}.jar
+            cd release && zip external-data-sheet-${{ github.ref_name }}.zip *.jar
+            
       - name: 🚀 Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
