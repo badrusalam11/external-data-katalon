@@ -14,8 +14,8 @@
 
   <keywords>
     <!-- Expose your static methods as custom keywords -->
-    <keyword class="com.katalon.externaldata.ExcelReader" name="readExcel" />
-    <keyword class="com.katalon.externaldata.ExcelReader" name="readGoogleSheet" />
+    <keyword class="com.badru.externaldata.ExcelReader" name="readExcel" />
+    <keyword class="com.badru.externaldata.ExcelReader" name="readGoogleSheet" />
     <!-- Add more if your class defines other public static methods -->
   </keywords>
 </plugin>

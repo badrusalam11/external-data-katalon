@@ -45,7 +45,7 @@
 ## 📚 Usage Example
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 def data = ExcelReader.readExcel("Data/Example.xlsx", "Sheet1")
 println data
