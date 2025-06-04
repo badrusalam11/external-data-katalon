@@ -1,0 +1,21 @@
+<plugin>
+  <!-- Unique identifier: lowercase, no spaces -->
+  <id>external-data-sheet</id>
+  <!-- Match your build.gradle version -->
+  <version>1.0.0</version>
+  <!-- Display name in Katalon Store -->
+  <name>External Data Sheet</name>
+  <!-- Your name or organization -->
+  <provider>Muhamad Badru Salam</provider>
+  <description>
+    A lightweight Groovy library for reading data from external 
+    spreadsheet (.xlsx) and Google Sheets files in Katalon Studio.
+  </description>
+
+  <keywords>
+    <!-- Expose your static methods as custom keywords -->
+    <keyword class="com.badru.externaldata.ExcelReader" name="readExcel" />
+    <keyword class="com.badru.externaldata.ExcelReader" name="readGoogleSheet" />
+    <!-- Add more if your class defines other public static methods -->
+  </keywords>
+</plugin>
