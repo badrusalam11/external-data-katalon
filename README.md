@@ -42,10 +42,10 @@ external-data-katalon/
    ```bash
    ./gradlew clean build    # Linux/macOS
 
-3. Output JAR file will be located at: build/libs/external-data-sheet.jar
+3. Output JAR file will be located at: build/libs/external-data-katalon.jar
 
 ### How to Use it in Katalon
-1. Copy external-data-sheet.jar to your Katalon project’s Drivers/ folder.
+1. Copy external-data-katalon.jar to your Katalon project’s Drivers/ folder.
 2. Import and call it from your test case:
     ```groovy
     import com.katalon.externaldata.ExcelReader

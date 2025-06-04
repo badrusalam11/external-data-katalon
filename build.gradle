@@ -35,7 +35,7 @@ java {
 }
 
 shadowJar {
-    archiveBaseName.set('external-data-sheet')
+    archiveBaseName.set('external-data-katalon')
     archiveVersion.set(version)
     archiveClassifier.set('') // omit "-all" suffix
 }

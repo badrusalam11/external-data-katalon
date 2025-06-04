@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.badru</groupId>
-  <artifactId>external-data-sheet</artifactId>
+  <artifactId>external-data-katalon</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 

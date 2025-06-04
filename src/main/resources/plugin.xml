@@ -1,6 +1,6 @@
 <plugin>
   <!-- Unique identifier: lowercase, no spaces -->
-  <id>external-data-sheet</id>
+  <id>external-data-katalon</id>
   <!-- Match your build.gradle version -->
   <version>1.0.0</version>
   <!-- Display name in Katalon Store -->

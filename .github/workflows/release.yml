@@ -39,7 +39,7 @@ jobs:
             mkdir -p release
 
             # Pick up exactly one shadow JAR
-            JAR_PATH=$(ls build/libs/external-data-sheet-*.jar | head -n1)
+            JAR_PATH=$(ls build/libs/external-data-katalon-*.jar | head -n1)
             echo "Found shadow JAR at $JAR_PATH"
 
             # Copy into release/ (preserving its real filename)
@@ -47,7 +47,7 @@ jobs:
 
             # Zip it under the tag name
             cd release
-            zip external-data-sheet-${{ github.ref_name }}.zip external-data-sheet-*.jar
+            zip external-data-katalon-${{ github.ref_name }}.zip external-data-katalon-*.jar
 
             # List what we’re uploading
             ls -lh
