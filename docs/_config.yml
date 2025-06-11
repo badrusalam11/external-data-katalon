@@ -1,0 +1,38 @@
+# Site settings
+title: External Data Katalon
+description: A lightweight Groovy library for reading Excel data in Katalon Studio
+baseurl: "/external-data-katalon"
+url: "https://badrusalam11.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Navigation
+header_pages:
+  - installation.md
+  - usage.md
+  - api-reference.md
+  - examples.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - src/
+  - build.gradle
+  - settings.gradle
+  - gradlew
+  - gradlew.bat
+  - .gradle/
+  - build/
