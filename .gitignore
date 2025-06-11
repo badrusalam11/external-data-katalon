@@ -2,3 +2,4 @@ bin
 .gradle
 build
 sa-key.json
+target

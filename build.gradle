@@ -1,45 +1,43 @@
 plugins {
-    id 'groovy'
-    id 'java-library'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
 }
 
 group = 'com.badru'
 version = '1.0.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // Groovy runtime
-    implementation 'org.codehaus.groovy:groovy-all:3.0.19'
+    // Apache POI for ExcelReader
+    implementation 'org.apache.poi:poi:5.2.5'
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
 
-    // Apache POI (if you still need Excel support alongside Sheets)
-    implementation 'org.apache.poi:poi:5.2.3'
-    implementation 'org.apache.poi:poi-ooxml:5.2.3'
-
-    // Google Sheets API client (v4‑rev1‑1.20.0)
+    // Google Sheets API client (v4-rev1-1.20.0)
+    implementation 'com.google.api-client:google-api-client:1.20.0'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.20.0'
     implementation 'com.google.apis:google-api-services-sheets:v4-rev1-1.20.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:0.9.0' // compatible version with older API client
 
-    // Service‑account / OAuth2 support
-    implementation 'com.google.auth:google-auth-library-oauth2-http:1.16.0'
-
-    // Jackson JSON support for Google HTTP client
-    implementation 'com.google.http-client:google-http-client-jackson2:1.43.0'
+    // Optional: logging (recommended)
+    implementation 'org.slf4j:slf4j-simple:2.0.13'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
+jar {
+    manifest {
+        attributes(
+            'Implementation-Title': 'ExternalDataLib',
+            'Implementation-Version': version
+        )
+    }
 
-shadowJar {
-    archiveBaseName.set('external-data-katalon')
-    archiveVersion.set(version)
-    archiveClassifier.set('') // omit "-all" suffix
-}
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 
-tasks.build {
-    dependsOn shadowJar
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

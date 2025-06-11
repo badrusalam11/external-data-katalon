@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - 'v*'  # e.g., v1.0.0
-      
+
 permissions:
   contents: write
   actions: read
@@ -29,29 +29,29 @@ jobs:
       - name: 🧱 Build with Gradle
         run: ./gradlew clean build
 
-      - name: 📦 Zip shadow JAR
+      - name: 📦 Prepare release artifacts
         run: |
-            # Make sure the JAR is there
-            echo "Contents of build/libs:"  
-            ls -lh build/libs
+          # Make sure the JAR is there
+          echo "Contents of build/libs:"  
+          ls -lh build/libs
 
-            # Prepare release directory
-            mkdir -p release
+          # Prepare release directory
+          mkdir -p release
 
-            # Pick up exactly one shadow JAR
-            JAR_PATH=$(ls build/libs/external-data-katalon-*.jar | head -n1)
-            echo "Found shadow JAR at $JAR_PATH"
+          # Pick up exactly one JAR (you can customize the pattern if needed)
+          JAR_PATH=$(ls build/libs/external-data-katalon-*.jar | head -n1)
+          echo "Found JAR at $JAR_PATH"
 
-            # Copy into release/ (preserving its real filename)
-            cp "$JAR_PATH" release/
+          # Rename the JAR to match the tag
+          RELEASE_JAR_NAME="external-data-katalon-${{ github.ref_name }}.jar"
+          cp "$JAR_PATH" "release/$RELEASE_JAR_NAME"
 
-            # Zip it under the tag name
-            cd release
-            zip external-data-katalon-${{ github.ref_name }}.zip external-data-katalon-*.jar
+          # Create ZIP
+          cd release
+          zip "external-data-katalon-${{ github.ref_name }}.zip" "$RELEASE_JAR_NAME"
 
-            # List what we’re uploading
-            ls -lh
-
+          # List what we're uploading
+          ls -lh
 
       - name: 🚀 Create GitHub Release
         uses: softprops/action-gh-release@v1

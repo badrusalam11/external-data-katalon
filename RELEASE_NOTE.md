@@ -1,17 +1,18 @@
-# 📦 External Data Sheet – Release Notes
+# External Data For Katalon v1.1.1
 
-## Version: 1.1.0  
-📅 Release Date: 2025-06-04
+## Release Notes
 
-### 🔄 New Features
+### Enhancements
+- Reduced JAR file size through compression optimization
+- Improved overall package performance
 
-- ✅ **Excel Row Updates**
-  - New `updateExcelRow()` method to modify existing rows
-  - Supports partial or full row updates
-  - Maintains existing data in non-updated columns
+### Installation
+- Download the latest version from the release page
+- Follow standard installation procedures
 
-- ✅ **Row Insertion**
-  - New `insertExcelRow()` method to add rows
-  - Support for partial or complete field insertions
-  - Validates column headers before insertion
+### Requirements
+- Katalon Studio 8.0.0 or later
+- Java 8 or higher
 
+### Support
+For issues or questions, please visit our GitHub repository.
