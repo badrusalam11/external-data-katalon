@@ -45,13 +45,14 @@ external-data-katalon/
 3. Output JAR file will be located at: build/libs/external-data-katalon.jar
 
 ### How to Use it in Katalon
-1. Copy external-data-katalon.jar to your Katalon project’s Drivers/ folder.
-2. Import and call it from your test case:
+1. Download the latest jar from [Release](https://github.com/badrusalam11/external-data-katalon/releases/) 
+2. Copy external-data-katalon.jar to your Katalon project’s Drivers/ folder.
+3. Import and call it from your test case:
     ```groovy
     import com.katalon.externaldata.ExcelReader
     def data = ExcelReader.readExcel("path/to/MakeAppointment.xlsx", "Sheet1")
     println data
-3. Given the excel:
+4. Given the excel:
     | facility                    | check_list_apply   | healthcare_program  | visit_date  | comment         |
     | --------------------------- | ------------------ | ------------------- | ----------- | --------------- |
     | Hongkong CURA Healthcare... | true               | Medicare            | 29/04/2025  | this is comment |
@@ -67,6 +68,9 @@ external-data-katalon/
             comment: 'this is comment'
         ]
     ]
+
+## 📖 Documentation
+-  Read the complete documentation: [Documentation](https://badrusalam11.github.io/external-data-katalon/)
 
 📚 License
 MIT License
