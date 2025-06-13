@@ -21,7 +21,7 @@ This is the easiest and fastest way to get started.
 
 3. **Verify Installation**:
    ```groovy
-   import com.katalon.externaldata.ExcelReader
+   import com.badru.externaldata.ExcelReader
    println "Library loaded successfully!"
    ```
 
@@ -65,7 +65,7 @@ YourKatalonProject/
 Create a simple test script to verify installation:
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 try {
     println "✓ External Data Katalon library loaded successfully!"

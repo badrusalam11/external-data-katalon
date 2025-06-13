@@ -2,7 +2,7 @@
 
 ## ExcelReader Class
 
-**Package**: `com.katalon.externaldata`
+**Package**: `com.badru.externaldata`
 
 ### Methods
 

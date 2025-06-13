@@ -49,7 +49,7 @@ external-data-katalon/
 2. Copy external-data-katalon.jar to your Katalon project’s Drivers/ folder.
 3. Import and call it from your test case:
     ```groovy
-    import com.katalon.externaldata.ExcelReader
+    import com.badru.externaldata.ExcelReader
     def data = ExcelReader.readExcel("path/to/MakeAppointment.xlsx", "Sheet1")
     println data
 4. Given the excel:

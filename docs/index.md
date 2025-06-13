@@ -32,7 +32,7 @@ Choose one of the following methods:
 ### Basic Usage
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 def data = ExcelReader.readExcel("path/to/MakeAppointment.xlsx", "Sheet1")
 println data
@@ -72,4 +72,4 @@ MIT License - Copyright © 2025 Muhamad Badru Salam
 
 ## Author
 
-[Muhamad Badru Salam](https://www.linkedin.com/in/muhamad-badru-salam-3bab2531b/)
+[Muhamad Badru Salam](https://www.linkedin.com/in/muhamad-badru-salam-3bab2531b/)i

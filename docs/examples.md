@@ -13,7 +13,7 @@
 
 **Katalon Test Case:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 def userData = ExcelReader.readExcel("Data Files/user-data.xlsx", "Users")
 
@@ -52,7 +52,7 @@ Role: tester
 
 **Test Case:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 def loginTests = ExcelReader.readExcel("Data Files/login-tests.xlsx", "TestCases")
@@ -92,7 +92,7 @@ loginTests.each { testCase ->
 
 **Test Case:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 def products = ExcelReader.readExcel("Data Files/products.xlsx", "Products")
@@ -130,7 +130,7 @@ products.each { product ->
 
 **Test Case:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 def formTests = ExcelReader.readExcel("Data Files/form-validation.xlsx", "ValidationTests")
@@ -169,7 +169,7 @@ formTests.each { testData ->
 
 **Test Case:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 
@@ -205,7 +205,7 @@ apiTests.each { test ->
 
 **Update Test:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 // Read current data
 def users = ExcelReader.readExcel("Data Files/users.xlsx", "Users")
@@ -238,7 +238,7 @@ println "After update: ${updatedUsers}"
 
 **Test Case:**
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 def testFile = "Data Files/test-suite.xlsx"
 
@@ -263,7 +263,7 @@ println "Checkout tests: ${checkoutTests.size()}"
 ## Error Handling Example
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 def safeReadExcel(String filePath, String sheetName) {
     try {

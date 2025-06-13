@@ -5,7 +5,7 @@
 ### Reading Excel Data
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 // Read Excel file
 def data = ExcelReader.readExcel("path/to/your-file.xlsx", "Sheet1")
@@ -54,7 +54,7 @@ The library returns `List<Map<String, String>>`:
 ### Data-Driven Testing
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 def loginData = ExcelReader.readExcel("login-credentials.xlsx", "TestData")
@@ -118,7 +118,7 @@ try {
 ### Updating Excel Rows
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 // Update existing row
 ExcelReader.updateExcelRow("test-data.xlsx", "Sheet1", 1, [
@@ -130,7 +130,7 @@ ExcelReader.updateExcelRow("test-data.xlsx", "Sheet1", 1, [
 ### Inserting New Rows
 
 ```groovy
-import com.katalon.externaldata.ExcelReader
+import com.badru.externaldata.ExcelReader
 
 // Insert new row
 ExcelReader.insertExcelRow("test-data.xlsx", "Sheet1", [
